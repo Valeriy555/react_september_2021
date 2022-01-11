@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import Comment from "./Comment";
 
-export default function App (){
+export default function Comments (){
 
     let [commentList, setCommentsList] = useState([]); // useState - это хук
 
@@ -18,9 +18,9 @@ export default function App (){
 
     return (
         <div>
-
+            <p>COMMENTS: </p>
             {commentList.map(value =>
-                <Comment userId = {value.postId} id = {value.id} title = {value.name} email = {value.email} body = {value.body}/>)}
+                <Comment userId = {value.postId} id = {value.id} name = {value.name} email = {value.email} body = {value.body}/>)}
 
         </div>
     );

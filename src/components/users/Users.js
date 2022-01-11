@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import User from "./User";
 
-export default function App (){
+
+export default function Users (){
 
     let [userList, setUsersList] = useState([]); // useState - это хук
 
@@ -18,10 +19,13 @@ export default function App (){
 
     return (
         <div>
-
+<p>USERS: </p>
             {userList.map(value =>
-                <User id = {value.id} name = {value.name} username = {value.username}/>)}
-            <hr/>
+                <User id = {value.id} name = {value.name} username = {value.username} email = {value.email}
+                      street = {value.address.street} suite = {value.address.suite} city = {value.address.city}
+                      phone = {value.phone}
+                />)}
+
         </div>
     );
 }

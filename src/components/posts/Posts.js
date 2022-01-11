@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import Post from "./Post";
 
-export default function App (){
+
+export default function Posts (){
 
     let [postList, setPostsList] = useState([]); // useState - это хук
 
@@ -18,7 +19,7 @@ export default function App (){
 
     return (
         <div>
-
+            <p>POSTS: </p>
             {postList.map(value =>
                 <Post userId = {value.userId} id = {value.id} title = {value.title} body = {value.body}/>)}
 

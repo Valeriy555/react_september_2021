@@ -1,8 +1,8 @@
-export default function Post (props){
-    let {userId,id,title, body} = props;
+export default function Comment (props){
+    let {postId,id,name, email, body} = props;
     return (
         <div>
-            {userId}--{id}--{title}--{body}
+            {postId} - {id} - {name} - {email} - {body}
 
         </div>
     );

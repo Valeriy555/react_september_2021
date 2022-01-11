@@ -1,0 +1,19 @@
+.item{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.users{
+    width: 50%;
+    background: silver;
+}
+
+.posts{
+    width: 50%;
+    background: blue;
+}
+
+.comment{
+    background: gold;
+    margin-top: 0;
+}
