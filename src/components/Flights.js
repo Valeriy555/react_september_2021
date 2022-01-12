@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 
+import Flight from "./Flight";
 
 export  default function Flights () {
 
@@ -17,7 +18,8 @@ export  default function Flights () {
         <div>
 
             {
-                flightList.map(value => <Flights key={value.flight_number}/> )
+                flightList.map(value => <Flight key={value.flight_number}
+                item={value}/> )
             }
 
         </div>

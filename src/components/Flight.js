@@ -1,4 +1,3 @@
-
 export default function Flight ({item:value}){
 
     return (
