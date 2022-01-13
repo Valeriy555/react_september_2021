@@ -3,5 +3,14 @@
 }
 
 .users-box{
-    background: silver;
+    background: aqua;
+    border: 2px solid blue;
+    width: 50%;
+}
+
+.user-box{
+    background: orangered;
+    border: 2px solid brown;
+    width: 50%;
+
 }

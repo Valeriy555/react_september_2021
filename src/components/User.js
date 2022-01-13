@@ -1,12 +1,15 @@
-
-
-export default function User (props)
+export default function User ({id,name,infoUser,item})
 {
-let{id,name} = props;
+
+    const onclickInfoUser = ()=>{
+        infoUser(item);
+    }
+
 return(
     <div>
         {id}-{name}
-        {/*<button onClick={onClickUserChose}>Users details</button>*/}
+        <button onClick={onclickInfoUser}>Users details</button>
+        <hr/>
     </div>
 );
 }
