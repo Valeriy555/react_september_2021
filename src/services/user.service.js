@@ -6,8 +6,8 @@ let axiosInstance = axios.create({
 });
 
 
-const getUsers = () =>{
+const getAxiosUsers = () =>{
    return axiosInstance.get('/users');
 
 }
-export {getUsers}
+export {getAxiosUsers}

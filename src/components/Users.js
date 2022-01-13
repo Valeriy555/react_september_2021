@@ -1,35 +1,27 @@
 import {useEffect, useState} from "react";
 
-import {getUsers} from "../services/user.service";
+import 'src/Users.css'
+import {getAxiosUsers} from "../services/user.service";
 import User from './User'
 
-export default function Users (){
-    let [users,setUsers] = useState([]);
+export default function Users() {
+    let [users, setUsers] = useState([]);
 
-    useEffect(()=>{
-        getUsers().then(value => setUsers([...value]))
-    },[])
-
-
+    useEffect(() => {
+        getAxiosUsers().then(({data}) => setUsers([...data]))
+    }, [])
 
 
-// const chouseUser = (u) =>{
-//     setUser({...u});
-//
-//     getPostsOfUser(u.id).then(value => setPost([...value]));
-// }
+    return (
+        <div className={'wrap'}>
+            <div className={'user-box'}>
+                {
+                    users.map((value,index )=> <User key={value.id} id={value.id}  name={value.name}/>)
+                    // choseUser={choseUser}/>)
+                }
 
-
-return(
-    <div className={'wrap'}>
-        <div className={'user-box'}>
-            {
-                users.map(value =><User key={value.id} item={value.name} />)
-                                         // choseUser={choseUser}/>)
-            }
+            </div>
 
         </div>
-
-    </div>
-)
+    );
 }
