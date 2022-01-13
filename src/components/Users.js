@@ -5,7 +5,6 @@ import User from './User'
 import './Users.css'
 
 
-
 export default function Users() {
     let [users, setUsers] = useState([]);
     let [user, setUser] = useState();

@@ -11,4 +11,5 @@ const getAxiosUsers = () =>{
    return axiosInstance.get('/users');
 
 }
+
 export {getAxiosUsers}

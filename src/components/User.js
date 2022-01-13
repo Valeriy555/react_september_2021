@@ -5,6 +5,7 @@ export default function User ({id,name,infoUser,item})
         infoUser(item);
     }
 
+
 return(
     <div>
         {id}-{name}
