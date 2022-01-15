@@ -1,15 +1,6 @@
-import axios from 'axios';
+import {axiosService} from "./axios.service";
+import {urls} from "../configs/urls";
 
-let axiosInstance = axios.create({
-
-    baseURL:'https://jsonplaceholder.typicode.com',
-    headers:{}
-});
-
-
-const getAxiosUsers = () =>{
-   return axiosInstance.get('/users');
-
+export const userService = {
+    getAll:  () => axiosService.get(urls.users).then(value => value.data)
 }
-
-export {getAxiosUsers}
