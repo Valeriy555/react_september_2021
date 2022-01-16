@@ -1,3 +1,21 @@
 .wrap{
     display: flex;
 }
+
+.userBox{
+    border: 2px solid brown;
+    background: #61dafb;
+    width: 40%;
+
+}
+
+.userDetailsBox{
+    border: 2px solid brown;
+    background: silver;
+    width: 60%;
+}
+
+.postBox{
+    border: 2px solid brown;
+    background: orange;
+}
