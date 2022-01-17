@@ -1,14 +1,17 @@
 import React from 'react';
-import Users from "./components/users/Users"
-import Posts from "./components/posts/Posts"
-import Comments from "./components/comments/Comments"
+
+import Users from "./components/Users/Users"
+import Form from "./components/Form/Form";
+
 
 const App = () => {
+    const getFilter = (data)
+
     return (
         <div>
+            <Form/>
             <Users/>
-            <Posts/>
-            <Comments/>
+
         </div>
     );
 };
