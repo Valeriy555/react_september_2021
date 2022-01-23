@@ -1,11 +1,35 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {useParams} from "react-router-dom";
+import {userService} from "../../services/user.service";
+import User from "../../components/User/User";
 
-const UserDetailsPage = () => {
+ export function UserDetailsPage ()  {
+
+let [userDetails, setUserDetails] = useState({});
+// console.log(userDetails)
+
+let {id} = useParams();
+
+
+     useEffect(() => {
+
+         userService.getById(id).then(value => setUserDetails(value))
+
+
+     },[id])
+
+
+
+
+
     return (
         <div>
             UserDetailsPage
-        </div>
+
+            {JSON.stringify(userDetails)}
+
+
+         </div>
     );
 };
 
-export default UserDetailsPage;

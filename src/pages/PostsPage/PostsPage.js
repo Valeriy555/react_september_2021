@@ -5,7 +5,7 @@ import {postService} from "../../services/post.service";
 import Post from "../../components/Post/Post";
 
 
-    const PostsPage = () => {
+export function PostsPage () {
 
         const [posts,setPosts] = useState([])
 
@@ -26,4 +26,3 @@ import Post from "../../components/Post/Post";
     );
 };
 
-export default PostsPage;

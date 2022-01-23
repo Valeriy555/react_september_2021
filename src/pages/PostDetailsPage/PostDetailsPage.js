@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PostDetailsPage = () => {
+export function PostDetailsPage () {
     return (
         <div>
             PostDetailsPage
@@ -8,4 +8,3 @@ const PostDetailsPage = () => {
     );
 };
 
-export default PostDetailsPage;

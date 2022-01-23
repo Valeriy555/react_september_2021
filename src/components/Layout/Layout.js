@@ -4,16 +4,15 @@ import {NavLink, Outlet} from "react-router-dom";
 
 import css from "./Layout.module.css"
 
-const Layout = () => {
+export function Layout  () {
+
+
+
     return (
 
         <>
         <div >
-
             <Header/>
-
-            {/*<NavLink to="/users">Users</NavLink>*/}
-            {/*<NavLink to="/posts">Posts</NavLink>*/}
 
         </div>
 
@@ -25,4 +24,3 @@ const Layout = () => {
     );
 };
 
-export default Layout;
