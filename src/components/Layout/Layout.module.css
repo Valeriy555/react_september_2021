@@ -1,25 +1,25 @@
-.header{
+.header {
     min-height: 70px;
-    background-color:blue;
+    background-color: blue;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
-.header a{
+.header a {
     font-size: 30px;
     color: snow;
     text-decoration: none;
 }
 
-.header a[class  ='active']{
+.header a[class  ='active'] {
     text-decoration: underline;
     color: red;
 
 }
 
-.outlet{
+.outlet {
     width: 95%;
     margin: 0 auto;
     height: calc(100vh - 90px);

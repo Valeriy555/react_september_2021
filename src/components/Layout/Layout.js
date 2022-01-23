@@ -8,10 +8,12 @@ const Layout = () => {
     return (
 
         <>
-        <div className={css.header}>
+        <div >
 
-            <NavLink to="/users">Users</NavLink>
-            <NavLink to="/posts">Posts</NavLink>
+            <Header/>
+
+            {/*<NavLink to="/users">Users</NavLink>*/}
+            {/*<NavLink to="/posts">Posts</NavLink>*/}
 
         </div>
 
