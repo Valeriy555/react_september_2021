@@ -10,9 +10,6 @@ import PostDetailsPage from "./pages/PostDetailsPage/PostDetailsPage";
 
 
 
-
-
-
 const App = () => {
     return (
         <Routes>

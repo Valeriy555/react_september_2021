@@ -13,13 +13,12 @@ const Layout = () => {
             <NavLink to="/users">Users</NavLink>
             <NavLink to="/posts">Posts</NavLink>
 
-
-
-
-
         </div>
-            <Outlet/>
-            {/*<Header/>*/}
+
+            <div className={css.outlet}>
+                <Outlet/>
+            </div>
+
         </>
     );
 };
