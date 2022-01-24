@@ -14,3 +14,9 @@
     background: silver;
     width: 60%;
 }
+
+.userPost{
+    border: 2px solid brown;
+    min-height: 200px ;
+
+}

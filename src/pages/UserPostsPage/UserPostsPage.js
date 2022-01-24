@@ -1,11 +1,33 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {useParams} from "react-router-dom";
 
-const UserPostsPage = () => {
+
+import {userService} from "../../services/user.service";
+
+
+export function UserPostsPage() {
+    const {id} = useParams();
+    const [userPosts, setUserPosts] = useState([]);
+
+    useEffect(() => {
+
+        userService.getByUserPosts(id).then(value => setUserPosts([...value]))
+
+
+    }, [id])
+
     return (
         <div>
-            UserPostsPage
+
+            {
+                userPosts.map(user => <div key={user.id}>
+                    userId: {user.userId}
+                    id: {user.id}
+                    title: {user.title}
+                    body: {user.body}
+                </div>)
+            }
         </div>
     );
 };
 
-export default UserPostsPage;

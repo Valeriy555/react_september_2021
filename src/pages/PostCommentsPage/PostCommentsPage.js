@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {useParams} from "react-router-dom";
 
-const PostCommentsPage = () => {
+export function PostCommentsPage()  {
+
+    const {id} = useParams();
+    const [postComments, setPostComments] = useState([]);
+
     return (
         <div>
             PostCommentsPage
@@ -8,4 +13,3 @@ const PostCommentsPage = () => {
     );
 };
 
-export default PostCommentsPage;

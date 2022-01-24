@@ -1,17 +1,19 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
-import {userService} from "../../services/user.service";
+import {NavLink, useLocation, useParams} from "react-router-dom";
 import {postService} from "../../services/post.service";
 
 export function PostDetailsPage() {
-
+    const {id} = useParams();
     let [postDetails, setPostDetails] = useState({});
-
-
-    let {id} = useParams();
+    const {state} = useLocation()
 
 
     useEffect(() => {
+
+        if (state) {
+            setPostDetails(state)
+            return
+        }
 
         postService.getById(id).then(value => setPostDetails(value))
 
@@ -26,6 +28,9 @@ export function PostDetailsPage() {
             Title: {postDetails.title} <br/>
             Body: {postDetails.body}
             <hr/>
+            <NavLink to={'posts'}>
+                <button key={postDetails.id}>Post Comments </button>
+            </NavLink>
         </div>
 
     );

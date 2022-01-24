@@ -1,18 +1,23 @@
 import React, {useEffect, useState} from 'react';
-import {useLocation, useParams} from "react-router-dom";
+import { NavLink, Outlet, useLocation, useParams} from "react-router-dom";
+
 import {userService} from "../../services/user.service";
 
 export function UserDetailsPage() {
 
-    let [userDetails, setUserDetails] = useState({});
-
-
-    let {id} = useParams();
-
+    const {id} = useParams();
+    const [userDetails, setUserDetails] = useState([]);
+    const {state} = useLocation()
 
     useEffect(() => {
 
-        userService.getById(id).then(value => setUserDetails(value))
+        if (state) {
+            setUserDetails(state)
+            return
+        }
+
+
+        userService.getById(id).then(value => setUserDetails({...value}))
 
 
     }, [id])
@@ -20,15 +25,21 @@ export function UserDetailsPage() {
 
     return (
         <div>
-            {/*{JSON.stringify(userDetails)}*/}
-            ID:{userDetails.id} <br/>
-            Name: {userDetails.name} <br/>
-            Username: {userDetails.username} <br/>
-            Email: {userDetails.email} <br/>
-            Phone: {userDetails.phone} <br/>
-            Website: {userDetails.website} <br/>
+            <div>
+                ID:{userDetails.id} <br/>
+                Name: {userDetails.name} <br/>
+                Username: {userDetails.username} <br/>
+                Email: {userDetails.email} <br/>
+                Phone: {userDetails.phone} <br/>
+                Website: {userDetails.website} <br/>
 
-            <hr/>
+                <hr/>
+
+                <NavLink to={'posts'}>
+                    <button key={userDetails.id}>User Posts</button>
+                </NavLink>
+            </div>
+            <Outlet/>
 
         </div>
     );

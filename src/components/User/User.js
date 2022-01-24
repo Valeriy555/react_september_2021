@@ -1,19 +1,17 @@
 import React from 'react';
-import {useNavigate} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 import css from './user.module.css';
 
 const User = ({user}) => {
     let {id, name} = user;
-    let navigator = useNavigate();
-
 
 
     return (
         <div className={css.wrap}>
             <div className={css.user}>{id}) {name}</div>
 
-            <button onClick={() => navigator(id.toString())}>Details user</button>
+            <NavLink to={id.toString()} state={user} ><button  key = {user.id}>Details user</button></NavLink>
 
         </div>
     );
