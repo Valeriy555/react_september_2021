@@ -1,35 +1,36 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 import {userService} from "../../services/user.service";
-import User from "../../components/User/User";
 
- export function UserDetailsPage ()  {
+export function UserDetailsPage() {
 
-let [userDetails, setUserDetails] = useState({});
-// console.log(userDetails)
-
-let {id} = useParams();
+    let [userDetails, setUserDetails] = useState({});
 
 
-     useEffect(() => {
-
-         userService.getById(id).then(value => setUserDetails(value))
+    let {id} = useParams();
 
 
-     },[id])
+    useEffect(() => {
+
+        userService.getById(id).then(value => setUserDetails(value))
 
 
-
+    }, [id])
 
 
     return (
         <div>
-            UserDetailsPage
+            {/*{JSON.stringify(userDetails)}*/}
+            ID:{userDetails.id} <br/>
+            Name: {userDetails.name} <br/>
+            Username: {userDetails.username} <br/>
+            Email: {userDetails.email} <br/>
+            Phone: {userDetails.phone} <br/>
+            Website: {userDetails.website} <br/>
 
-            {JSON.stringify(userDetails)}
+            <hr/>
 
-
-         </div>
+        </div>
     );
 };
 

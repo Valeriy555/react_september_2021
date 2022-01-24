@@ -2,8 +2,6 @@ import React from 'react';
 import {Route, Routes} from "react-router-dom";
 
 
-
-
 import {PostDetailsPage, PostsPage, UserDetailsPage, UsersPage} from "./pages";
 import {Layout} from "./components";
 

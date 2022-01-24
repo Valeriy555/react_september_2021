@@ -20,7 +20,7 @@
 }
 
 .outlet {
-    width: 95%;
+
     margin: 0 auto;
     height: calc(100vh - 90px);
     overflow: hidden;

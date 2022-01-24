@@ -1,0 +1,16 @@
+.wrap{
+    display: flex;
+}
+
+.posts{
+    border: 2px solid brown;
+    background: #61dafb;
+    width: 60%;
+
+}
+
+.details{
+    border: 2px solid brown;
+    background: silver;
+    width: 40%;
+}

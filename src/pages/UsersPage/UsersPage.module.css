@@ -1,0 +1,16 @@
+.wrap{
+    display: flex;
+}
+
+.users{
+    border: 2px solid brown;
+    background: #61dafb;
+    width: 40%;
+
+}
+
+.details{
+    border: 2px solid brown;
+    background: silver;
+    width: 60%;
+}

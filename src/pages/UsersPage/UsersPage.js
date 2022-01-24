@@ -3,6 +3,7 @@ import {Outlet} from "react-router-dom";
 
 import {userService} from "../../services/user.service";
 import User from "../../components/User/User";
+import css from './UsersPage.module.css';
 
 
 export function UsersPage () {
@@ -17,17 +18,18 @@ export function UsersPage () {
 
 
     return (
-        <div>
-            <h1>Users</h1>
+        <div className={css.wrap}>
+
+            <div className={css.users} >
 
             {users.map(user => <User key={user.id} user={user} />)}
+            </div>
 
-            <hr/>
 
-            <div>
-                <h3>details about user</h3>
+            <div className={css.details}>
 
                 <Outlet/>
+
             </div>
 
         </div>

@@ -1,0 +1,11 @@
+.wrap{
+    display: flex;
+}
+.post{
+    width: 600px;
+}
+
+button{
+    width: 150px;
+
+}

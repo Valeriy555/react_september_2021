@@ -11,7 +11,7 @@ const User = ({user}) => {
 
     return (
         <div className={css.wrap}>
-            <div className={css.user}>{id} - {name}</div>
+            <div className={css.user}>{id}) {name}</div>
 
             <button onClick={() => navigator(id.toString())}>Details user</button>
 
