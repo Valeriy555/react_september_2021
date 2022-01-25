@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {NavLink, Outlet, useLocation, useParams} from "react-router-dom";
+import {Link, Outlet, useLocation, useParams} from "react-router-dom";
 
 import {postService} from "../../services";
 
@@ -31,9 +31,9 @@ export function PostDetailsPage() {
                 Title: {postDetails.title} <br/>
                 Body: {postDetails.body}
                 <hr/>
-                <NavLink to={'comments'}>
+                <Link to={'comments'}>
                     <button key={postDetails.id}>Post Comments</button>
-                </NavLink>
+                </Link>
             </div>
             <Outlet/>
 

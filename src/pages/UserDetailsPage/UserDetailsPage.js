@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { NavLink, Outlet, useLocation, useParams} from "react-router-dom";
+import {Link, Outlet, useLocation, useParams} from "react-router-dom";
 
 import {userService} from "../../services";
 
@@ -34,9 +34,9 @@ export function UserDetailsPage() {
 
                 <hr/>
 
-                <NavLink to={'posts'}>
+                <Link to={'posts'}>
                     <button key={userDetails.id}>User Posts</button>
-                </NavLink>
+                </Link>
             </div>
             <Outlet/>
 

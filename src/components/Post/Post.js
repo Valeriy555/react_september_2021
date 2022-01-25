@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 import css from "./post.module.css";
 
@@ -13,7 +13,7 @@ export function Post ({post}) {
 
 
 
-            <NavLink to={id.toString()} state={post} ><button  key = {post.id}>Details user</button></NavLink>
+            <Link to={id.toString()} state={post} ><button  key = {post.id}>Details user</button></Link>
         </div>
     );
 }
