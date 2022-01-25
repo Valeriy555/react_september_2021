@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { NavLink, Outlet, useLocation, useParams} from "react-router-dom";
 
-import {userService} from "../../services/user.service";
+import {userService} from "../../services";
 
 export function UserDetailsPage() {
 
@@ -15,7 +15,6 @@ export function UserDetailsPage() {
             setUserDetails(state)
             return
         }
-
 
         userService.getById(id).then(value => setUserDetails({...value}))
 

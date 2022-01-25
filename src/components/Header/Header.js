@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 
 import css from "../Layout/Layout.module.css"
 
-const Header = () => {
+export function Header (){
     return (
         <div className={css.header}>
 
@@ -14,4 +14,3 @@ const Header = () => {
     );
 };
 
-export default Header;

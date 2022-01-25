@@ -1,11 +1,11 @@
 import React from 'react';
-import {NavLink, useNavigate} from "react-router-dom";
+import {NavLink} from "react-router-dom";
+
 import css from "./post.module.css";
 
-const Post = ({post}) => {
+
+export function Post ({post}) {
     let {id, title} = post;
-
-
 
     return (
         <div className={css.wrap}>
@@ -16,6 +16,5 @@ const Post = ({post}) => {
             <NavLink to={id.toString()} state={post} ><button  key = {post.id}>Details user</button></NavLink>
         </div>
     );
-};
+}
 
-export default Post;

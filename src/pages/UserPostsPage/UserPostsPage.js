@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 
-
-import {userService} from "../../services/user.service";
-
+import {userService} from "../../services";
 
 export function UserPostsPage() {
     const {id} = useParams();
@@ -25,6 +23,7 @@ export function UserPostsPage() {
                     id: {user.id}
                     title: {user.title}
                     body: {user.body}
+                    <hr/>
                 </div>)
             }
         </div>

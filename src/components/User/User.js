@@ -3,7 +3,9 @@ import {NavLink} from "react-router-dom";
 
 import css from './user.module.css';
 
-const User = ({user}) => {
+
+
+export function User ({user}) {
     let {id, name} = user;
 
 
@@ -15,6 +17,5 @@ const User = ({user}) => {
 
         </div>
     );
-};
+}
 
-export default User;

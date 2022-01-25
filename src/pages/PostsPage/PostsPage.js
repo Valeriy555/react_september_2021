@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-
-
-import {postService} from "../../services/post.service";
-import Post from "../../components/Post/Post";
-import css from './PostPage.module.css'
 import {Outlet} from "react-router-dom";
+
+import css from './PostPage.module.css'
+import {postService} from "../../services";
+import {Post} from "../../components";
+
 
 
 export function PostsPage() {
@@ -12,6 +12,7 @@ export function PostsPage() {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
+
         postService.getAll().then(value => setPosts(value))
     })
 

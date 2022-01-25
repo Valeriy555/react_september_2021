@@ -1,12 +1,11 @@
 import React from 'react';
-import Header from "../Header/Header";
-import {NavLink, Outlet} from "react-router-dom";
+import {Outlet} from "react-router-dom";
+
 
 import css from "./Layout.module.css"
+import {Header} from "../Header/Header";
 
 export function Layout  () {
-
-
 
     return (
 

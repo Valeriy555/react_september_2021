@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {NavLink, useLocation, useParams} from "react-router-dom";
-import {postService} from "../../services/post.service";
+import {NavLink, Outlet, useLocation, useParams} from "react-router-dom";
+
+import {postService} from "../../services";
+
 
 export function PostDetailsPage() {
     const {id} = useParams();
@@ -23,14 +25,18 @@ export function PostDetailsPage() {
 
     return (
         <div>
-            UserId: {postDetails.userId} <br/>
-            ID: {postDetails.id} <br/>
-            Title: {postDetails.title} <br/>
-            Body: {postDetails.body}
-            <hr/>
-            <NavLink to={'posts'}>
-                <button key={postDetails.id}>Post Comments </button>
-            </NavLink>
+            <div>
+                UserId: {postDetails.userId} <br/>
+                ID: {postDetails.id} <br/>
+                Title: {postDetails.title} <br/>
+                Body: {postDetails.body}
+                <hr/>
+                <NavLink to={'comments'}>
+                    <button key={postDetails.id}>Post Comments</button>
+                </NavLink>
+            </div>
+            <Outlet/>
+
         </div>
 
     );

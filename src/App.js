@@ -1,10 +1,10 @@
 import React from 'react';
-import {Navigate, Route, Routes} from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 
 
-import {PostDetailsPage, PostsPage, UserDetailsPage, UserPostsPage, UsersPage} from "./pages";
+import {PostCommentsPage, PostDetailsPage, PostsPage, UserDetailsPage, UserPostsPage, UsersPage} from "./pages";
 import {Layout} from "./components";
-import PostCommentsPage from "./pages/PostCommentsPage/PostCommentsPage";
+
 
 
 const App = () => {
