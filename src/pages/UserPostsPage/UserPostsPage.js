@@ -19,9 +19,9 @@ export function UserPostsPage() {
 
             {
                 userPosts.map(user => <div key={user.id}>
-                    UserId: {user.userId}
-                    ID: {user.id}
-                    Title: {user.title}
+                    UserId: {user.userId} <br/>
+                    ID: {user.id} <br/>
+                    Title: {user.title} <br/>
                     Body: {user.body}
                     <hr/>
                 </div>)

@@ -12,6 +12,8 @@ export function User ({user}) {
             <div className={css.user}>{id}) {name}</div>
 
             <Link to={id.toString()} state={user} ><button  key = {user.id}>Details user</button></Link>
+            <Link to={`${id.toString()} /albums `}><button  key = {user.id}>User Albums</button></Link>
+
 
         </div>
     );

@@ -1,10 +1,17 @@
 import React from 'react';
-import { Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 
 
-import {PostCommentsPage, PostDetailsPage, PostsPage, UserDetailsPage, UserPostsPage, UsersPage} from "./pages";
+import {
+    PostCommentsPage,
+    PostDetailsPage,
+    PostsPage,
+    AlbumsPage,
+    UserDetailsPage,
+    UserPostsPage,
+    UsersPage, PhotosPage
+} from "./pages";
 import {Layout} from "./components";
-
 
 
 const App = () => {
@@ -16,19 +23,23 @@ const App = () => {
 
                     <Route path={':id'} element={<UserDetailsPage/>}>
                         <Route path={'posts'} element={<UserPostsPage/>}/>
+
+                    </Route>
+                    <Route path={':id/albums'} element={<AlbumsPage/>}>
+                        <Route path={'albumId/photos'} element={<PhotosPage/>}/>
+
                     </Route>
                 </Route>
 
-                    <Route path={'posts'} element={<PostsPage/>}>
+                <Route path={'posts'} element={<PostsPage/>}>
 
-                        <Route path={':id'} element={<PostDetailsPage/>}>
-                            <Route path={'comments'} element={<PostCommentsPage/>}/>
-                        </Route>
+                    <Route path={':id'} element={<PostDetailsPage/>}>
+                        <Route path={'comments'} element={<PostCommentsPage/>}/>
+                    </Route>
 
 
                 </Route>
             </Route>
-
 
         </Routes>
     );

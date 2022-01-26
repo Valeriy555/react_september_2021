@@ -4,4 +4,5 @@ export * from './PostsPage/PostsPage'
 export * from './UserDetailsPage/UserDetailsPage'
 export * from './UserPostsPage/UserPostsPage'
 export * from './UsersPage/UsersPage'
-
+export * from './AlbumsPage/AlbumsPage'
+export * from './PhotosPage/PhotosPage'
