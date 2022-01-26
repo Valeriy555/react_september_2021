@@ -14,7 +14,7 @@ export function UsersPage () {
     useEffect(() => {
         userService.getAll().then(value => setUsers(value))
 
-    })
+    },[])
 
 
 

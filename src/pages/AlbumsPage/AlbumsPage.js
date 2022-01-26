@@ -1,38 +1,35 @@
 import React, {useEffect, useState} from 'react';
-import {Link, Outlet, useLocation, useParams} from "react-router-dom";
-import {userService} from "../../services";
+import {Link, Outlet, useParams} from "react-router-dom";
+import {albumsService} from "../../services";
+
+
 
 export function AlbumsPage() {
 
-    // const {id} = useParams();
+    const {id} = useParams();
     const [albums, setAlbums] = useState([]);
-    // const {state} = useLocation()
 
     useEffect(() => {
 
-        // if (state) {
-        //     setAlbums(state)
-        //     return
-        // }
 
+        albumsService.getByIdAlbum(id).then(value => setAlbums([...value]))
 
-        userService.getByAlbums().then(value => setAlbums(value))
-
-
-    }, [])
+    }, [id])
 
     return (
         <div>
-            AlbumsPage
 
             {
-                albums.map(album => <div key={album.id}>
+                albums.map(album => <div key={albums.id}>
+                    <hr/>
                     userId:{album.userId} <br/>
                     ID: {album.id} <br/>
                     Title: {album.title} <br/>
 
+                    <Link to={`${id}/photos`.toString()}><button> Album photos </button></Link>
                 </div>)
             }
+
             <Outlet/>
         </div>
     );
