@@ -1,11 +1,9 @@
-// import React from 'react';
-//
-// const Cats = () => {
-//     return (
-//         <div>
-//             Cats
-//         </div>
-//     );
-// };
-//
-// export {Cats};
+const Cats = ({cats}) => {
+    return (
+        <div>
+            {cats.map(({id, name}) => <div key={id}>{name}</div>)}
+        </div>
+    );
+};
+
+export {Cats};

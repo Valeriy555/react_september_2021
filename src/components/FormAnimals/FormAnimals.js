@@ -1,47 +1,20 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-export  function FormAnimals () {
+import css from "./FormAnimals.modele.css";
 
-
-    let [formState,setFormState] = useState({cat:'', dog:''})
-
-    let onCatSubmit = (e) => {
-        e.preventDefault();
-        let cat = e.target.cat.value
-        console.log(cat)
-
-
-    };
-
-    // let onDogSubmit = (e) => {
-    //     e.preventDefault();
-    //     let dog = e.target.dog.value
-    //     console.log(dog)
-    //
-    // };
-
-    function onChange(e) {
-        setFormState({...formState,[e.target.name]:e.target.value})
-    }
-        return (
+const FormAnimals = () => {
+    return (
         <div>
-            <div >
-                <hr/>
-                <form >
-                    Add Cat: <input type="text" name={'cat'} placeholder={'enter name cat'} value={formState.cat} onChange={onChange}/>
-                    <button onClick={onCatSubmit} >Save cat</button>
+            <form className={css.form} >
 
-                </form>
+                Add Cat: <input type="text" name={'cat'}/>
+                <button >Save</button>
+                Add Dog: <input type="text" name={'cat'}/>
+                <button >Save</button>
 
-                {/*<form onSubmit={onDogSubmit} >*/}
-                {/*    Add Dog: <input type="text" name={'dog'} placeholder={'enter name dog'} value={formState.dog} onChange={onChange}/>*/}
-                {/*    <button>Save dog</button>*/}
-                {/*</form>*/}
-
-                <div>{formState.cat}</div>
-
-            </div>
+            </form>
         </div>
     );
 };
 
+export {FormAnimals};
