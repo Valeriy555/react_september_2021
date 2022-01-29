@@ -20,9 +20,9 @@ export  function FormAnimals () {
 
     };
 
-    // function onChange(e) {
-    //     setFormState({...formState,[e.target.name]:e.target.value})
-    // }
+    function onChange(e) {
+        setFormState({...formState,[e.target.name]:e.target.value})
+    }
         return (
         <div>
             <div >
