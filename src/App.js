@@ -1,5 +1,6 @@
 import React from 'react';
-import {FormAnimals} from "./components/FormAnimals/FormAnimals";
+import {FormAnimals} from "./components";
+
 
 const App = () => {
     return (
