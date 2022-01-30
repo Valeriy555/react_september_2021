@@ -20,10 +20,6 @@ const FormAnimals = () => {
         const name = inputCat.current.value;
 
 
-    if (!name) {
-        return
-    }
-
     const cat = {
         id: new Date().getTime(),
         name
@@ -38,9 +34,6 @@ const addDog = (e) => {
     e.preventDefault();
     const name = inputDog.current.value;
 
-if(!name) {
-    return
-}
 
 
 const dog = {
