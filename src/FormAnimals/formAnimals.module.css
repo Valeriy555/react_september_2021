@@ -1,0 +1,11 @@
+.form {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.delElem {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+}
