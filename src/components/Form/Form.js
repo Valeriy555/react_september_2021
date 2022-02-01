@@ -1,12 +1,15 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
+import {useDispatch} from "react-redux";
+import {addCar} from "../../store";
 
-
-const Form = ({getFormData}) => {
+const Form = () => {
     const {handleSubmit, register, reset} = useForm();
 
+const dispatch = useDispatch(); // хук возвращает dispatch для записи в state
+
     const submit = (data) => {
-        getFormData(data)
+   dispatch(addCar({data}))
         reset()
     }
 
@@ -21,5 +24,4 @@ const Form = ({getFormData}) => {
         </form>
     );
 };
-
 export {Form};
