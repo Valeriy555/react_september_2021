@@ -4,12 +4,13 @@ import {useDispatch} from "react-redux";
 import {addCar} from "../../store";
 
 const Form = () => {
-    const {handleSubmit, register, reset} = useForm();
+    const {handleSubmit, register, reset} = useForm(); // хук для работы с формами
 
 const dispatch = useDispatch(); // хук возвращает dispatch для записи в state
 
-    const submit = (data) => {
-   dispatch(addCar({data}))
+    const submit = (data) => {  // data - данные введенные с инпута
+        console.log(data);
+        dispatch(addCar({data}))
         reset()
     }
 
