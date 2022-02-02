@@ -10,7 +10,7 @@ const dispatch = useDispatch(); // хук возвращает dispatch для �
 
     const submit = (data) => {  // data - данные введенные с инпута
         console.log(data);
-        dispatch(addCar({data}))
+        dispatch(addCar({data})) // в dispatch ложим функцию из carSlice
         reset()
     }
 

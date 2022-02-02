@@ -1,9 +1,9 @@
 import {configureStore} from "@reduxjs/toolkit"
-import carReducer from "./car.slice";
+import carReducerSlice from "./car.slice";
 
 const store = configureStore({ // конфигурация store для всех слайсов
     reducer: {
-        carReducer // наш слайс подключили к store
+        carReducerSlice // наш слайс подключили к store
     }
 })
 
