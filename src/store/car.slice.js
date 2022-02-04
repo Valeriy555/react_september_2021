@@ -15,36 +15,34 @@ export const getAllCars = createAsyncThunk(
         }
     }
 )
-
+//___________________________________________________________________________________________________________________________________
 export const createCar = createAsyncThunk(
     'cars/createCar',
-    async ({data:newCar, id},{dispatch})=>{
+    async ({data: newCar, id}, {dispatch}) => {
         try {
             console.log(id);
             const data = await carService.create(newCar);
             console.log(data);
             dispatch(addCar({data}))
-        }catch (e) {
+        } catch (e) {
 
         }
     }
 )
-
+//___________________________________________________________________________________________________________________________________
 export const deleteCarThunk = createAsyncThunk(
     'cars/createCar',
-    async ({id},{dispatch})=>{
+    async ({id}, {dispatch}) => {
         try {
             await carService.deleteById(id);
             dispatch(deleteCar({id}))
-        }catch (e) {
+        } catch (e) {
 
         }
     }
 )
 
-
-
-
+//___________________________________________________________________________________________________________________________________
 
 const carSlice = createSlice({
     name: 'carSlice',
@@ -66,12 +64,13 @@ const carSlice = createSlice({
             state.cars = state.cars.filter(car => car.id !== action.payload.id)
         }
     },
+//___________________________________________________________________________________________________________________________________
 
 
-    extraReducers: {
+    extraReducers: {  // сюда возвращаются данные с  return cars который в getAllCars и дальше идет пошаговое их выполнение:
         [getAllCars.pending]: (state, action) => { // ожидание (загрузка)
 
-            state.status = 'loading' // доступились до status в initialState и поменяли его значение с null на loading
+            state.status = 'pending' // доступились до status в initialState и поменяли его значение с null на loading
             state.error = null
 
         },

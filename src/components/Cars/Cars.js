@@ -16,11 +16,11 @@ const Cars = () => {
 
     return (
         <div>
-            {status === 'loading' && <h1>Loading...</h1>}
+            {status === 'pending' && <h1>Loading...</h1>}
             {error && <h2>{error}</h2>}
             {cars.map(car => <Car key={car.id} car={car}/>)}
         </div>
     );
 };
-
+Еще
 export {Cars};
