@@ -1,15 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+
 import {Car} from "../Car/Car";
-import {useSelector} from "react-redux";
+import {getAllCars} from "../../store";
 
 const Cars = () => {
-   const {cars} = useSelector(genStore => genStore['carReducerSlice']) // через этот хук обратился к store и запросил
-    // один из редюсеров,в данном случае запросил редьюс carReducer и положил это в cars,
-    // который являеться ключем в initialState в вайл car.slice
+    const {cars,status, error} = useSelector(genStore => genStore['carReducerSlice']);
+
+    const dispatch = useDispatch();
+
+    useEffect( () => {
+        dispatch(getAllCars())
+
+    },[])
 
     return (
         <div>
-            {cars.map(car => <Car key={car.id} car={car} />)}
+            {status === 'loading' && <h1>Loading...</h1>}
+            {error && <h2>{error}</h2>}
+            {cars.map(car => <Car key={car.id} car={car}/>)}
         </div>
     );
 };

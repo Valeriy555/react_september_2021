@@ -1,28 +1,93 @@
-import {createSlice} from "@reduxjs/toolkit"
+import {createSlice, createAsyncThunk} from "@reduxjs/toolkit"
+import {carService} from "../services";
+
+
+export const getAllCars = createAsyncThunk(
+    'carSlice/getAllCars',
+
+    async (_, {rejectWithValue}) => {
+        try {
+            const cars = await carService.getAll(); // когда функция начнет выполнятся, она перейдет в состояне pending (ниже в extraReducers)
+            return cars
+
+        } catch (e) {
+            return rejectWithValue(e.messages)
+        }
+    }
+)
+
+export const createCar = createAsyncThunk(
+    'cars/createCar',
+    async ({data:newCar, id},{dispatch})=>{
+        try {
+            console.log(id);
+            const data = await carService.create(newCar);
+            console.log(data);
+            dispatch(addCar({data}))
+        }catch (e) {
+
+        }
+    }
+)
+
+export const deleteCarThunk = createAsyncThunk(
+    'cars/createCar',
+    async ({id},{dispatch})=>{
+        try {
+            await carService.deleteById(id);
+            dispatch(deleteCar({id}))
+        }catch (e) {
+
+        }
+    }
+)
+
+
+
+
 
 const carSlice = createSlice({
-    name: 'carSlice', // как бы имя данного слайса
+    name: 'carSlice',
 
-    initialState: {   // начальное значение state: это обьект {},                       | Это все
-        cars: [],      // первый ключ, значение которого пустой массив                  | ячейка памяти
-        info: 'Эту запись передали с слайса дополнительно' // просто для эксперемента   | в store
+    initialState: {
+        cars: [],
+        status: null,
+        error: null
     },
-    reducers: { // прописываем методы которые будут работать с state
-        addCar: (state, action) => {   // ключ addCar: 'он же action'
-            state.cars.push({                               // функция редьюссера
-                id: new Date().getTime(),
-                ...action.payload.data                      // через это можем получать инфу
-            })
+
+
+    reducers: {
+        addCar: (state, action) => {
+
+            state.cars.push(action.payload.data);
+
         },
-        deleteCar: (state, action) => { // ключ: deleteCar
-            state.cars = state.cars.filter(car => car.id !== action.payload.id) // функция редьюссера
+        deleteCar: (state, action) => {
+            state.cars = state.cars.filter(car => car.id !== action.payload.id)
+        }
+    },
+
+
+    extraReducers: {
+        [getAllCars.pending]: (state, action) => { // ожидание (загрузка)
+
+            state.status = 'loading' // доступились до status в initialState и поменяли его значение с null на loading
+            state.error = null
+
         },
+        [getAllCars.fulfilled]: (state, action) => { // выполненный (когда данные пришли)
+            state.status = 'fulfilled'
+            state.cars = action.payload
+
+        },
+        [getAllCars.rejected]: (state, action) => { // отклоненный (когда в данных ошибка)
+            state.status = 'rejected'
+            state.error = action.payload
+        }
     }
 })
 
-const carReducerSlice = carSlice.reducer // c carSlice вытащил reducer и записал в переменную carReducer
-export default carReducerSlice // экспортируем carReducer, который содержит уже в себе reducer
+const carReducerSlice = carSlice.reducer
+export default carReducerSlice
 
-export const {addCar, deleteCar} = carSlice.actions; // деструкторизировал addCar и deleteCar,
-// что бы в дальнейшем их использовать напрямую. Вытягиваем их с reducers, через actions
-// (actions это методы addCar и deleteCar  так настроен редукс, нужно тупо запомнить это) и экспортируем сразу
+export const {addCar, deleteCar} = carSlice.actions;

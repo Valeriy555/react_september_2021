@@ -1,16 +1,16 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
 import {useDispatch} from "react-redux";
-import {addCar} from "../../store";
+import {addCar, createCar} from "../../store";
 
 const Form = () => {
     const {handleSubmit, register, reset} = useForm(); // хук для работы с формами
 
-const dispatch = useDispatch(); // хук возвращает dispatch для записи в state
+const dispatch = useDispatch();
 
-    const submit = (data) => {  // data - данные введенные с инпута
+    const submit = (data) => {
         console.log(data);
-        dispatch(addCar({data})) // в dispatch ложим функцию из carSlice
+        dispatch(createCar({data}))
         reset()
     }
 
