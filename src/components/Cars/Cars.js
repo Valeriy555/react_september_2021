@@ -22,5 +22,5 @@ const Cars = () => {
         </div>
     );
 };
-Еще
+
 export {Cars};
