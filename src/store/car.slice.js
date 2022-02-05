@@ -17,7 +17,7 @@ export const getAllCars = createAsyncThunk(
 )
 //___________________________________________________________________________________________________________________________________
 export const createCar = createAsyncThunk(
-    'cars/createCar',
+    'carSlice/createCar',
     async ({data: newCar, id}, {dispatch}) => {
         try {
             console.log(id);
@@ -31,7 +31,7 @@ export const createCar = createAsyncThunk(
 )
 //___________________________________________________________________________________________________________________________________
 export const deleteCarThunk = createAsyncThunk(
-    'cars/createCar',
+    'carSlice/deleteCarThunk',
     async ({id}, {dispatch}) => {
         try {
             await carService.deleteById(id);
