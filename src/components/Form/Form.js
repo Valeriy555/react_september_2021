@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import {addCar, createCar} from "../../store";
 
 const Form = () => {
-    const {handleSubmit, register, reset} = useForm(); // хук для работы с формами
+    const {handleSubmit, register, reset, setValue} = useForm(); // хук для работы с формами
 
 const dispatch = useDispatch();
 
@@ -14,13 +14,15 @@ const dispatch = useDispatch();
         reset()
     }
 
+
     return (
         <form onSubmit={handleSubmit(submit)}>
 
-            <label>Model: <input type= "text" {...register('model')}/> </label>
+            <label>Model: <input type= "text" {...register('model')} /> </label>
             <label>Price: <input type= "text" {...register('price')}/> </label>
             <label>Year: <input type= "text" {...register('year')}/> </label>
             <button>Save</button>
+            {/*<button>{id?'Update':'Create'}</button>*/}
 
         </form>
     );
