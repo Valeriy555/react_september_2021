@@ -21,7 +21,7 @@ const Car = ({car}) => {
 
             </div>
 
-            {/*<button onClick={() => dispatch(updateCarThunk({car}))}>Update</button>*/}
+
             <button onClick={() => dispatch(carToUpdate({car}))}>Update</button>
 
             <button onClick={() => dispatch(deleteCarThunk({id}))}>Delete</button>
