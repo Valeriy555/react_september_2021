@@ -2,6 +2,12 @@ import {createSlice, createAsyncThunk} from "@reduxjs/toolkit"
 import {carService} from "../services";
 
 
+const initialState = {
+    cars: [],
+    status:null,
+    error:null,
+    carForUpdate:null
+}
 export const getAllCars = createAsyncThunk(
     'carSlice/getAllCars',
 
@@ -15,7 +21,6 @@ export const getAllCars = createAsyncThunk(
         }
     }
 )
-//___________________________________________________________________________________________________________________________________
 export const createCar = createAsyncThunk(
     'carSlice/createCar',
     async ({data: newCar, id}, {dispatch}) => {
@@ -29,7 +34,6 @@ export const createCar = createAsyncThunk(
         }
     }
 )
-//___________________________________________________________________________________________________________________________________
 export const deleteCarThunk = createAsyncThunk(
     'carSlice/deleteCarThunk',
     async ({id}, {dispatch}) => {
@@ -42,29 +46,24 @@ export const deleteCarThunk = createAsyncThunk(
     }
 )
 
-export const updateCarThunk = createAsyncThunk(
-    'carSlice/updateCarThunk',
-    async ({id}, {dispatch}) => {
-        try {
-            await carService.updateById(id);
-            dispatch(updateCar({id}))
-        } catch (e) {
+// export const updateCarThunk = createAsyncThunk(
+//     'carSlice/updateCarThunk',
+//     async ({id,car}, {dispatch}) => {
+//         try {
+//             await carService.updateById(id,car);
+//             dispatch(carToUpdate({car}))
+//         } catch (e) {
+//
+//         }
+//     }
+// )
 
-        }
-    }
-)
 
-
-//___________________________________________________________________________________________________________________________________
 
 const carSlice = createSlice({
     name: 'carSlice',
 
-    initialState: {
-        cars: [],
-        status: null,
-        error: null
-    },
+    initialState,
 
 
     reducers: {
@@ -79,8 +78,8 @@ const carSlice = createSlice({
 
 
 
-        updateCar: (state, action) => {
-            state.cars.push(action.payload.id);
+        carToUpdate: (state, action) => {
+            state.carForUpdate = action.payload.car
         }
     },
 
@@ -109,4 +108,4 @@ const carSlice = createSlice({
 const carReducerSlice = carSlice.reducer
 export default carReducerSlice
 
-export const {addCar, deleteCar, updateCar} = carSlice.actions;
+export const {addCar, deleteCar, carToUpdate} = carSlice.actions;

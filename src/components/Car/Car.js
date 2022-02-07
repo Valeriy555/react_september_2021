@@ -2,9 +2,11 @@ import React from 'react';
 import {useDispatch} from "react-redux";
 
 import css from './Car.module.css'
-import { deleteCarThunk, updateCarThunk} from "../../store";
+import {carToUpdate, deleteCarThunk} from "../../store";
 
-const Car = ({car: {id, model, price, year},}) => {
+const Car = ({car}) => {
+    const {id, model, price, year} = car
+
     const dispatch = useDispatch();
 
     return (
@@ -19,7 +21,9 @@ const Car = ({car: {id, model, price, year},}) => {
 
             </div>
 
-            <button onClick={() => dispatch(updateCarThunk({id}))}>Update</button>
+            {/*<button onClick={() => dispatch(updateCarThunk({car}))}>Update</button>*/}
+            <button onClick={() => dispatch(carToUpdate({car}))}>Update</button>
+
             <button onClick={() => dispatch(deleteCarThunk({id}))}>Delete</button>
 
 
