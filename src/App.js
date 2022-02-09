@@ -1,5 +1,5 @@
 import {Cars, Form} from "./components";
-import {Route} from "react-router-dom";
+
 
 const App = () => {
 
@@ -8,9 +8,6 @@ const App = () => {
             <Form />
             <Cars />
 
-            <Route/>
-            <Route/>
-            <Route/>
         </div>
     );
 };
