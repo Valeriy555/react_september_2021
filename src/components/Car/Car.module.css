@@ -1,7 +1,23 @@
-.car{
+.car_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 15%;
+}
+
+.car {
+    margin: 3px;
+    border: 2px solid brown;
+    background: silver;
+    overflow: hidden;
+
+}
+
+.btn {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 20px;
-    gap:20px
+    cursor: pointer;
+    gap: 30px;
+
 }
+
+

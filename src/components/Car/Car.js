@@ -10,25 +10,27 @@ const Car = ({car}) => {
     const dispatch = useDispatch();
 
     return (
-        <div className={css.car}>
 
-            <div>
 
+        <div className={css.car_wrap}>
+            <div className={css.car}>
+                <div>ID: {id}</div>
                 <div>Model: {model}</div>
                 <div>Price: {price}</div>
                 <div>Year: {year}</div>
 
+                <div className={css.btn}>
+                    <button onClick={() => dispatch(carToUpdate({car}))}>Update</button>
 
+                    <button onClick={() => dispatch(deleteCarThunk({id}))}>Delete</button>
+                </div>
             </div>
 
 
-            <button onClick={() => dispatch(carToUpdate({car}))}>Update</button>
-
-            <button onClick={() => dispatch(deleteCarThunk({id}))}>Delete</button>
-
-
         </div>
-    );
+
+    )
+        ;
 };
 
 export {Car};
