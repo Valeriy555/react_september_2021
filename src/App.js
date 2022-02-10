@@ -7,8 +7,8 @@ const App = () => {
         <div>
             <Form />
             <Cars />
-
         </div>
+
     );
 };
 
