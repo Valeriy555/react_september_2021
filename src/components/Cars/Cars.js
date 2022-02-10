@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 import {Car} from "../Car/Car";
 import {getAllCars} from "../../store";
-import css from './cars.module.css'
+import css from './Cars.module.css'
 
 const Cars = () => {
     const {cars,status, error} = useSelector(genStore => genStore['carReducerSlice']);

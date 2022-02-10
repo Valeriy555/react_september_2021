@@ -7,7 +7,6 @@ export function Header (){
     return (
         <div className={css.header}>
 
-            <NavLink to="/form">Form</NavLink>
             <NavLink to="/cars">Cars</NavLink>
 
             <NavLink to="/users">Users</NavLink>
