@@ -27,7 +27,6 @@ const CommentsSlice = createSlice({
     name: 'CommentsSlice',
     initialState,
     reducers: {
-
     },
 
     extraReducers: {

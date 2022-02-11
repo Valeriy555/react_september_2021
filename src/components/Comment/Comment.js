@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Comment = ({user:{postId,id,name,email,body}}) => {
+const Comment = ({comment:{postId,id,name,email,body}}) => {
+
+
     return (
         <div>
             <div>PostId: {postId}</div>
