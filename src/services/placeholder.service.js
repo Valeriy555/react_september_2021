@@ -1,11 +1,12 @@
-import {axiosService} from "./axios.service";
 import {urlsPlaceholder} from "../constants";
+import {axiosServicePlaceholder} from "./placeholder.axios.service";
 
 
 
-export const axiosServ = {
-    getAllUsers:  () => axiosService.get(urlsPlaceholder.users).then(value => value.data),
-    getAllPosts:  () => axiosService.get(urlsPlaceholder.posts).then(value => value.data),
-    getAllComments:  () => axiosService.get(urlsPlaceholder.comments).then(value => value.data),
+export const placeholderService = {
+    getAllUsers:  () => axiosServicePlaceholder.get(urlsPlaceholder.users).then(value => value.data),
+
+    getAllPosts:  () => axiosServicePlaceholder.get(urlsPlaceholder.posts).then(value => value.data),
+    getAllComments:  () => axiosServicePlaceholder.get(urlsPlaceholder.comments).then(value => value.data)
 
 }

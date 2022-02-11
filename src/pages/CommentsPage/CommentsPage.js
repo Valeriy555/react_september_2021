@@ -1,9 +1,26 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+
+import {getAllComments} from "../../store/comments.slice";
+import {Comment} from "../../components";
+
+
 
 const CommentsPage = () => {
+
+    const {comments} = useSelector(state => state['commentReducerSlice']);
+    console.log(comments)
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getAllComments())
+    }, [])
+
+
     return (
         <div>
-            CommentsPage
+
+            {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
         </div>
     );
 };
