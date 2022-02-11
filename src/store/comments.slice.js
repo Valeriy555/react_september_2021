@@ -7,26 +7,28 @@ import {placeholderService} from "../services";
 export const getAllComments = createAsyncThunk(
     'CommentsSlice/getAllComments',
 
-    async (_, {rejectedWithValue}) => {
+    async (_, {rejectWithValue}) => {
         try {
             const comments = await placeholderService.getAllComments()
             console.log(comments)
             return comments
         } catch (e) {
-            return rejectedWithValue(e.messages)
+            return rejectWithValue(e.messages)
         }
     }
 )
 
 
 const initialState = {
-    posts: [],
+    comments: [],
 }
 
 const CommentsSlice = createSlice({
     name: 'CommentsSlice',
     initialState,
-    reducers: {},
+    reducers: {
+
+    },
 
     extraReducers: {
 
