@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 
-import {  Layout} from "./components";
+import {Layout} from "./components";
 import {CarsPage, CommentsPage, PostsPage, UsersPage} from "./pages";
 
 

@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import {getAllPosts} from "../../store/post.slice";
+
 import {Post} from "../../components";
+import {getAllPosts} from "../../store";
 
 
 const PostsPage = () => {

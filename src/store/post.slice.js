@@ -11,7 +11,6 @@ export const getAllPosts = createAsyncThunk(
             const posts = await placeholderService.getAllPosts();
             console.log(posts)
             return posts
-
         } catch (e) {
             return rejectWithValue(e.messages)
         }
@@ -25,18 +24,14 @@ const initialState = {
 const PostsSlice = createSlice({
     name: 'PostsSlice',
     initialState,
-    reducers: {
-    },
+    reducers: {},
 
     extraReducers: {
-
         [getAllPosts.fulfilled]: (state, action) => {
             state.status = 'fulfilled'
             state.posts = action.payload
         },
     }
 })
-
-
 const postReducerSlice = PostsSlice.reducer
 export default postReducerSlice

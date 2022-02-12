@@ -9,7 +9,7 @@ export const getAllUsers = createAsyncThunk(
     async (_, {rejectWithValue}) => {
         try {
             const users = await placeholderService.getAllUsers();
-            console.log(users)
+
             return users
 
         } catch (e) {

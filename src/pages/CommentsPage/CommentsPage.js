@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import {getAllComments} from "../../store/comments.slice";
+
 import {Comment} from "../../components";
+import {getAllComments} from "../../store";
 
 
 

@@ -18,7 +18,6 @@ export const getAllComments = createAsyncThunk(
     }
 )
 
-
 const initialState = {
     comments: [],
 }
@@ -26,11 +25,9 @@ const initialState = {
 const CommentsSlice = createSlice({
     name: 'CommentsSlice',
     initialState,
-    reducers: {
-    },
+    reducers: {},
 
     extraReducers: {
-
         [getAllComments.fulfilled]: (state, action) => {
             state.status = 'fulfilled'
             state.comments = action.payload
