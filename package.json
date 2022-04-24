@@ -15,7 +15,6 @@
     "axios": "^0.25.0",
     "react-hook-form": "^7.25.3",
     "@reduxjs/toolkit": "^1.7.1"
-
   },
   "devDependencies": {
     "@types/react": "^17.0.38",
