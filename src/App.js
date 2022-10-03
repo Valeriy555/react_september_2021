@@ -5,9 +5,11 @@ import reducer from "./Redusers/Redusers";
 
 export default function App() {
 
-    let [state, dispatch] = useReducer(reducer, {count_1: 0, count_2: 0, count_3: 0});
+    let [state, dispatch] =
+        useReducer(reducer, {count_1: 0, count_2: 0, count_3: 0});
     let {count_1, count_2, count_3} = state;
     console.log(state)
+
     return (
         <div>
             <h2 className={css.box}>Homework</h2>

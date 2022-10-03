@@ -1,5 +1,4 @@
 const reducer = (state , action) => {
-
     switch (action.type) {
         case 'plus_10':
             return {...state, count_1: state.count_1 + 10};
@@ -22,11 +21,9 @@ const reducer = (state , action) => {
         case 'RESET_3':
             return {...state, count_3: action.payload};
 
-
         default:
             return state
     }
-
 }
 export default reducer;
 
