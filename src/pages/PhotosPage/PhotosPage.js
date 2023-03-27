@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {Link, useParams} from "react-router-dom";
 
 import {albumsService} from "../../services";
-import css from "./PhotosPage.css";
 
 export function PhotosPage ()  {
 
@@ -33,5 +32,5 @@ export function PhotosPage ()  {
 
         </div>
     );
-};
+}
 
